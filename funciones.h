@@ -5,11 +5,12 @@
 #include <vector>
 #include <set>
 
-#include "persona.h"
-#include "run.h"
-#include "nombres.h"
-#include "fecha.h"
-#include "direccion.h"
+/* Clases */
+#include "Clases/persona.h"
+#include "Clases/run.h"
+#include "Clases/nombres.h"
+#include "Clases/fecha.h"
+#include "Clases/direccion.h"
 
 using namespace std;
 
