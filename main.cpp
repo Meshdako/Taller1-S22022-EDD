@@ -1,17 +1,20 @@
 #include <iostream>
 
+/* Funciones */
 #include "funciones.h"
 #include "funciones.cpp"
-#include "persona.h"
-#include "persona.cpp"
-#include "run.h"
-#include "run.cpp"
-#include "nombres.h"
-#include "nombres.cpp"
-#include "fecha.h"
-#include "fecha.cpp"
-#include "direccion.h"
-#include "direccion.cpp"
+
+/* Clases */
+#include "Clases/persona.h"
+#include "Clases/persona.cpp"
+#include "Clases/run.h"
+#include "Clases/run.cpp"
+#include "Clases/nombres.h"
+#include "Clases/nombres.cpp"
+#include "Clases/fecha.h"
+#include "Clases/fecha.cpp"
+#include "Clases/direccion.h"
+#include "Clases/direccion.cpp"
 
 using namespace std;
 
