@@ -174,21 +174,16 @@ void Lectura(Persona Electores[], int &indice)
                 RUT;DV;NOMBRES;PATERNO;MATERNO;NAC_DIA;NAC_MES;NAC_ANHO;DIRECCION;NRO;COMUNA;HABILITADO_SUFRAGAR;ES_VOCAL_MESA;NRO_MESA
             */
             string dv = data[1];
-            Run RunAux(stol(data[0]), dv[0]);
-            Electores[indice].setRut(RunAux);
             
-            //cout << indice << endl;
-            //RunAux.verRun();
-
+            Run RunAux(stol(data[0]), dv[0]);
             Nombres NombreAux(data[2], data[3], data[4]);
-            Electores[indice].setNombre(NombreAux);
-
             Fecha FechaAux(stoi(data[5]), stoi(data[6]), stoi(data[7]));
-            Electores[indice].setFecha(FechaAux);
-
             Direccion DireccionAux(data[8], stoi(data[9]), data[10]);
+            
+            Electores[indice].setRut(RunAux);
+            Electores[indice].setNombre(NombreAux);
+            Electores[indice].setFecha(FechaAux);
             Electores[indice].setDireccion(DireccionAux);
-
             Electores[indice].setSufragar(stoi(data[11]));
             Electores[indice].setVocal(stoi(data[12]));
             Electores[indice].setMesa(stoi(data[13]));
