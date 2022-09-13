@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-using namespace std;
+//using namespace std;
 
 /*
     RUT;DV;NOMBRES;PATERNO;MATERNO;NAC_DIA;NAC_MES;NAC_ANHO;DIRECCION;NRO;COMUNA;HABILITADO_SUFRAGAR;ES_VOCAL_MESA;NRO_MESA
@@ -12,21 +12,21 @@ using namespace std;
 class Direccion
 {
     private:
-        string Calle;
+        std::string Calle;
         int Nro;
-        string Comuna;
+        std::string Comuna;
     public:
         Direccion();
-        Direccion(string, int, string);
+        Direccion(std::string, int, std::string);
         ~Direccion();
 
-        void setCalle(string x){Calle = x;}
+        void setCalle(std::string x){Calle = x;}
         void setNro(int x){Nro = x;}
-        void setComuna(string x){Comuna = x;}
+        void setComuna(std::string x){Comuna = x;}
 
-        string getCalle(){return Calle;}
+        std::string getCalle(){return Calle;}
         int getNro(){return Nro;}
-        string getComuna(){return Comuna;}
+        std::string getComuna(){return Comuna;}
 
         void verDireccion();
 };
