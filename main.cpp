@@ -26,12 +26,12 @@ using namespace std;
  * @return int 
  */
 
-int indice = 0;
-Persona Electores[20];
+
 
 int main(int argc, char **argv)
 {
-    //HelloWorld();
+    int indice = 0;
+    Persona Electores[1001];
 
     Lectura(Electores, indice);
 
