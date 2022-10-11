@@ -27,31 +27,20 @@ void CantidadDeElectores(Persona Electores[], int indice)
     cout << "Total de vocales de mesa: " << TotalVocalesMesa << endl;
 }
 
-void ElectoresPorComuna(Persona Electores[], int indice)
+void ElectoresPorComuna(Persona Electores[], int indice, char Comuna[256])
 {
     cout << endl;
-    char Comuna[256];
-
-	cout << "--------------------------------------" << endl;
-	cout << "Ingrese la comuna que busca (En  mayúsculas, ej: LA CISTERNA): ";
-	cin.getline(Comuna, 256);
-
+    
 	for(int i = 0; i < indice; i++){
 		if(Comuna == Electores[i].getDireccion().getComuna())
 			Electores[i].verPersona();
 	}
 }
 
-void ConsultaDeDatos(Persona Electores[], int indice)
+void ConsultaDeDatos(Persona Electores[], int indice, int BuscarRun)
 {
     cout << endl;
-    int BuscarRun;
-
-    cout << "--------------------------------------" << endl;
-	cout << "Ingrese el RUN a buscar, SIN EL DV: ";
-    cin >> BuscarRun;
-	
-
+    
     for(int i = 0; i < indice; i++){
 		if(BuscarRun == Electores[i].getRut().getRunSdv())
 			Electores[i].verPersona();
@@ -79,7 +68,7 @@ void VotantesPorComunas(Persona Electores[], int indice)
             }
         }
 
-        cout << "<<" << Comunas.at(i) << ">>" << endl;
+        cout << "\t<<" << Comunas.at(i) << ">>" << endl;
         cout << "Total de electoras: " << cont << endl;
 
         cont = 0;
@@ -127,14 +116,29 @@ void Menu(Persona Electores[], int indice)
 
         switch (Opcion)
         {
+        case 0:
+            cout << "Nos vemos! Que tengas un día fenomenal." << endl;
+            break;
         case 1:
             CantidadDeElectores(Electores, indice);
             break;
         case 2:
-            ElectoresPorComuna(Electores, indice);
+            char Comuna[256];
+
+            cout << "--------------------------------------" << endl;
+            cout << "Ingrese la comuna que busca (En  mayúsculas, ej: LA CISTERNA): ";
+            cin.getline(Comuna, 256);
+
+            ElectoresPorComuna(Electores, indice, Comuna);
             break;
         case 3:
-            ConsultaDeDatos(Electores, indice);
+            int BuscarRun;
+
+            cout << "--------------------------------------" << endl;
+            cout << "Ingrese el RUN a buscar, SIN EL DV: ";
+            cin >> BuscarRun;
+
+            ConsultaDeDatos(Electores, indice, BuscarRun);
             break;
         case 4:
             VotantesPorComunas(Electores, indice);
